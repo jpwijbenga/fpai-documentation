@@ -82,8 +82,27 @@ In the `cnf` project there are a lot of options to change, and we'll change the 
 
 -releaserepo: Release
 ```
-
 This makes sure that you use our bundle repository with the latest Apache Felix and Jetty bundles. Also there is a local repository that you can use to add your own bundles in the project.
+
+##Solve the Error in Eclipse concerning the `osgi.annotation` import
+Depending on your version of Eclipse the following error may occur now. By removing the template repositories the project can not find the osgi.annotations import that it says it needs. Proceed to the `bnd.bnd` file and remove the import, because we don't need it.
+
+## Initializing Git in the folder.
+Since the start of this tutorial, we've set up a common build tool to make uniform and to perform several build steps, called Gradle.
+For the example, we need some of the dependencies coming from the common Gradle repository. We initialize Git in the folder, so that we can use the functionality of Gradle. In a terminal window in the root folder of the project (the folder that directly contains folder 'cnf') execute the command 'git init'. This creates a new git repository in the folder. Usually a .gitignore file is added to exclude files, and folders and patterns that should not be synchronized, such as generated files.
+
+## Setting up gradle
+The common files of Gradle should be added through Git as a Git submodule to your project. After the initialization of the Git repository, execute the following command in the repository root folder:
+git.exe submodule add   -- "https://github.com/flexiblepower/flexiblepower-build-tools.git"  "cnf/gradle"
+Depending on the current security setting of the project you may be asked to authenticate yourself using your Github credentials.
+When this operation succeeded the Gradle files are in place.
+
+In Eclipse right-click the cnf project and `Refresh`. The newly created files are now known in Eclipse. 
+
+Next we set up the plugin path for the build tool Gradle (discussed below). Open up the `cnf/ext/pluginpaths.bnd` file and put the following code in there: (In some existing projects this line of code may be found in the `cnf/ext/repositories.bnd` file.)
+```
+-pluginpath: ${workspace}/cnf/gradle/bnd/biz.aQute.repository.jar
+```
 
 ## Next section
 
