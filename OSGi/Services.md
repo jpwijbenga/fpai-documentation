@@ -1,6 +1,8 @@
 # Services in OSGi
 
-TODO: This chapter should be worked out in more detail, this is just the outline
+OSGi offers a  Services registry where services can be found, registered and unregistered. This registry functionality is not present in the bare Java platform.
+
+We'll explore the advantages of Services by making an example project.
 
 ## Registering a service
 
