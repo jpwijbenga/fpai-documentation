@@ -16,7 +16,7 @@ On this page you can select a template that makes it quicker to start developmen
 
 ![The bnd.bnd file of the new project](myfirstapp-bnd.png)
 
-In this view you already see that there is a default version generated of `0.0.0.${tstamp}`. This last part is a bnd *macro* that will be replaced by bnd with the timestamp at the time of the build. And since bndtools adds a build-step to the Eclipse building cycle, there is already a build bundle file available in the project under the `generated` folder. Open this jar file with the `JAR editor` and you will see the following:
+In this view you already see that there is a default version generated of `0.0.0.${tstamp}`. This last part is a bnd *macro* that will be replaced by bnd with the timestamp at the time of the build. And since bndtools adds a build-step to the Eclipse building cycle, there is already a built bundle file available in the project under the `generated` folder. Open this jar file with the `JAR editor` and you will see the following:
 
 ![The empty generated jar file](myfirstapp-jar.png)
 
