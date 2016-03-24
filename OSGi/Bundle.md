@@ -1,6 +1,12 @@
 # OSGi Bundles
 
-In OSGi the unit of deployment is called a bundle. In Java terms this a simple a `.jar`-file (a *Java Archive*) with some extra meta data. We'll create our first bundle and run it using Eclipse and bndtools.
+In OSGi the unit of deployment is called a bundle. In Java terms each bundle is a simple a `.jar`-file (a *Java Archive*) with some extra metadata. 
+
+The reason for this is elaborated by OSGi guru Neil Bartlett:
+"Our first requirement is to cleanly separate modules so that classes from one module do not have the uncontrolled ability to see and obscure classes from other modules. In traditional Java the so-called “classpath” is an enormous list of classes, and if multiple classes happen to have the same fully-qualified name then the first will always be found and the second and all others will be ignored."
+Separating your application into different bundles allows you to partition and isolate your code. After this, you may use (declarative) services to expose only the functionality that you need to share across bundles.
+
+Let's create our first bundle and run it using Eclipse and bndtools.
 
 ## A new bundle
 
