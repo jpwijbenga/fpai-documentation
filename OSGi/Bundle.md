@@ -2,9 +2,9 @@
 
 In OSGi the unit of deployment is called a bundle. In Java terms each bundle is a simple a `.jar`-file (a *Java Archive*) with some extra metadata. 
 
-The reason for this is elaborated by OSGi guru Neil Bartlett:
+The reason for introducing bundles over plain jar files is elaborated by OSGi guru Neil Bartlett:
 "Our first requirement is to cleanly separate modules so that classes from one module do not have the uncontrolled ability to see and obscure classes from other modules. In traditional Java the so-called “classpath” is an enormous list of classes, and if multiple classes happen to have the same fully-qualified name then the first will always be found and the second and all others will be ignored."
-Separating your application into different bundles allows you to partition and isolate your code. After this, you may use (declarative) services to expose only the functionality that you need to share across bundles.
+Separating your application into different bundles allows you to partition and isolate your code. After this, you may expose only the functionality that you need to share across bundles. This gives more control over the exposure of code and can result in more loose coupling. Exposing functionality is handled in the next chapter; we'll start simple by making a single bundle application. 
 
 Let's create our first bundle and run it using Eclipse and bndtools.
 
@@ -114,4 +114,4 @@ Here we can see the generated version and names of the bundles. Also you can see
 The rightmost column shows the actions that we can execute from the dashboard. Click the `stop` buttonto stop the bundle. Switch to Eclipse and then look at  your Console window. A lot of new events have been logged. When you scroll up from the bottom through the log messages you should find the printed text as confirmation that our `stop` method has been executed. Going back to the dashboard, you can start the bundle again. In the Webconsole now go to Status -> Bundlelist and you can check the status of the bundles.
 
 ## Next section
-We've succesfully created a bundle, started and stopped it using the web console. The next section will address Services.
+We've succesfully created a single bundle application, started and stopped it using the web console. The next section will address Services as a way of dynamic and controlled interaction between bundles.
