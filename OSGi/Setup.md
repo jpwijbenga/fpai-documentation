@@ -89,13 +89,13 @@ Depending on your version of Eclipse the following error may occur now. By remov
 
 ## Initializing Git in the folder.
 Since the start of this tutorial, we've set up a common build tool to make uniform and to perform several build steps, called Gradle.
-For the example, we need some of the dependencies coming from the common Gradle repository. We initialize Git in the folder, so that we can use the functionality of Gradle. In a terminal window in the root folder of the project (the folder that directly contains folder 'cnf') execute the command 'git init'. This creates a new git repository in the folder. Usually a .gitignore file is added to exclude files, and folders and patterns that should not be synchronized, such as generated files.
+For the example, we need some of the dependencies coming from the common Gradle repository. We initialize Git in the folder, so that we can use the functionality of Gradle. In a terminal window in the root folder of the project (the folder that directly contains folder `cnf`) execute the command `git init`. This creates a new git repository in the folder. Usually a .gitignore file is added to exclude files, and folders and patterns that should not be synchronized, such as generated files.
 
 ## Setting up gradle
 The common files of Gradle should be added through Git as a Git submodule to your project. After the initialization of the Git repository, execute the following command in the repository root folder:
-git.exe submodule add   -- "https://github.com/flexiblepower/flexiblepower-build-tools.git"  "cnf/gradle"
+`git.exe submodule add   -- "https://github.com/flexiblepower/flexiblepower-build-tools.git"  "cnf/gradle"`
 Depending on the current security setting of the project you may be asked to authenticate yourself using your Github credentials.
-When this operation succeeded the Gradle files are in place.
+When this operation completes, the Gradle files are in place.
 
 In Eclipse right-click the cnf project and `Refresh`. The newly created files are now known in Eclipse. 
 
